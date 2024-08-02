@@ -1,1 +1,9 @@
-/*  your css code here. If applicable */
+.card img {
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        .card-body h6, .card-body p {
+            text-align: center;
+        }
+        .modal-dialog {
+            max

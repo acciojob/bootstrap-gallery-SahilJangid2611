@@ -7,7 +7,141 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
+	<body>
+
+    <div class="container mt-4">
+        <h2 class="text-center">Cards Gallery</h2>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                   <img src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg">
+	        <div class="card-body">
+	          <h6>Leh Ladakh</h6>
+	          <p>This is a very sacred place full of natural stuff</p>
+	        </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                   <img src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg">
+	        <div class="card-body">
+	          <h6>Leh Ladakh</h6>
+	          <p>This is a very sacred place full of natural stuff</p>
+	        </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg">
+	        <div class="card-body">
+	          <h6>Leh Ladakh</h6>
+	          <p>This is a very sacred place full of natural stuff</p>
+	        </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                     <img src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg">
+	        <div class="card-body">
+	          <h6>Leh Ladakh</h6>
+	          <p>This is a very sacred place full of natural stuff</p>
+	        </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                   <img src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg">
+	        <div class="card-body">
+	          <h6>Leh Ladakh</h6>
+	          <p>This is a very sacred place full of natural stuff</p>
+	        </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                   <img src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg">
+	        <div class="card-body">
+	          <h6>Leh Ladakh</h6>
+	          <p>This is a very sacred place full of natural stuff</p>
+	        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Image Preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <div id="carouselExampleControls" class="carousel slide">
+                        <div class="carousel-inner">
+                         
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+     
+        const images = [
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image7.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image8.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image8.jpg",
+	    "https://storage.googleapis.com/acciojob-open-file-collections/image9.jpg"
+	    ];
+
+        $('#imageModal').on('show.bs.modal', function (event) {
+            const button = $(event.relatedTarget); l
+            const index = button.data('index'); 
+            const modal = $(this);
+
+            const carouselInner = modal.find('.carousel-inner');
+            carouselInner.empty();
+
+            images.forEach((src, idx) => {
+                const itemClass = idx === index ? 'carousel-item active' : 'carousel-item';
+                carouselInner.append(`
+                    <div class="${itemClass}">
+                        <img src="${src}" class="d-block w-100" alt="Image ${idx + 1}">
+                    </div>
+                `);
+            });
+        });
+    </script>
+</body>
     <script type="text/javascript" src="./script.js">
 </script>
 
